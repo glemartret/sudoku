@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
-import 'package:lm_labs_app/src/features/settings/presentation/settings.i18n.dart';
+import 'package:sudoku/src/features/settings/application/settings_service.dart';
+import 'package:sudoku/src/features/settings/presentation/settings.i18n.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///

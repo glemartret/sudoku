@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:lm_labs_app/src/features/sample_feature/domain/sample_item.dart';
-import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_feature.i18n.dart';
-import 'package:lm_labs_app/src/routing/routes.dart';
+import 'package:sudoku/src/features/sample_feature/domain/sample_item.dart';
+import 'package:sudoku/src/features/sample_feature/presentation/sample_feature.i18n.dart';
+import 'package:sudoku/src/routing/routes.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends ConsumerWidget {

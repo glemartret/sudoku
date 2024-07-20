@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_feature.i18n.dart';
+import 'package:sudoku/src/features/sample_feature/presentation/sample_feature.i18n.dart';
 
 /// Displays detailed information about a SampleItem.
 class SampleItemDetailsView extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lm_labs_app/src/features/settings/presentation/settings_view.dart';
+import 'package:sudoku/src/features/settings/presentation/settings_view.dart';
 
 part 'settings_routes.g.dart';
 

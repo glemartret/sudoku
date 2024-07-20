@@ -1,4 +1,4 @@
-# lm_labs_app
+# sudoku
 
 A new Flutter project.
 

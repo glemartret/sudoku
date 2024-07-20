@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:lm_labs_app/src/features/jokes/domain/joke.dart';
+import 'package:sudoku/src/features/jokes/domain/joke.dart';
 import 'package:lm_labs_utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

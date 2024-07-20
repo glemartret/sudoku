@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_details_view.dart';
-import 'package:lm_labs_app/src/features/sample_feature/presentation/sample_item_list_view.dart';
+import 'package:sudoku/src/features/sample_feature/presentation/sample_item_details_view.dart';
+import 'package:sudoku/src/features/sample_feature/presentation/sample_item_list_view.dart';
 
 part 'sample_feature_routes.g.dart';
 

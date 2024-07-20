@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lm_labs_app/src/features/jokes/presentation/jokes_view.dart';
+import 'package:sudoku/src/features/jokes/presentation/jokes_view.dart';
 
 part 'jokes_routes.g.dart';
 

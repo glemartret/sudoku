@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:lm_labs_app/src/features/home/presentation/home.i18n.dart';
-import 'package:lm_labs_app/src/routing/routes.dart';
+import 'package:sudoku/src/features/home/presentation/home.i18n.dart';
+import 'package:sudoku/src/routing/routes.dart';
 import 'package:lm_labs_utils/widgets.dart';
 
 class HomeView extends ConsumerWidget {

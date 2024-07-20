@@ -1,4 +1,4 @@
-package com.lemartret.lm_labs_app
+package com.lemartret.sudoku
 
 import io.flutter.embedding.android.FlutterActivity
 

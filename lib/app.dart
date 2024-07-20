@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:i18n_extension/i18n_extension.dart';
-import 'package:lm_labs_app/src/constants/intents.dart';
-import 'package:lm_labs_app/src/features/settings/application/settings_service.dart';
-import 'package:lm_labs_app/src/routing/router.dart';
+import 'package:sudoku/src/constants/intents.dart';
+import 'package:sudoku/src/features/settings/application/settings_service.dart';
+import 'package:sudoku/src/routing/router.dart';
 
 /// The Widget that configures your application.
 class MyApp extends ConsumerWidget {
@@ -39,7 +39,7 @@ class MyApp extends ConsumerWidget {
         Locale('fr'), // French, no country code
       ],
 
-      title: 'LM Labs App',
+      title: 'Sudoku',
 
       // Define a light and dark color theme. Then, read the user's
       // preferred ThemeMode (light, dark, or system default) from the

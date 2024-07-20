@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lm_labs_app/src/features/counter/presentation/counter_view.dart';
+import 'package:sudoku/src/features/counter/presentation/counter_view.dart';
 
 part 'counter_routes.g.dart';
 
