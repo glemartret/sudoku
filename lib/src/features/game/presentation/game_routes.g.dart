@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'counter_routes.dart';
+part of 'game_routes.dart';
 
 // **************************************************************************
 // GoRouterGenerator
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $counterRoute,
+      $gameRoute,
     ];
 
-RouteBase get $counterRoute => GoRouteData.$route(
-      path: '/counter',
-      factory: $CounterRouteExtension._fromState,
+RouteBase get $gameRoute => GoRouteData.$route(
+      path: '/game',
+      factory: $GameRouteExtension._fromState,
     );
 
-extension $CounterRouteExtension on CounterRoute {
-  static CounterRoute _fromState(GoRouterState state) => const CounterRoute();
+extension $GameRouteExtension on GameRoute {
+  static GameRoute _fromState(GoRouterState state) => const GameRoute();
 
   String get location => GoRouteData.$location(
-        '/counter',
+        '/game',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -36,4 +36,4 @@ extension $CounterRouteExtension on CounterRoute {
 // RoutesGenerator
 // **************************************************************************
 
-List<RouteBase> get $counterRoutes => $appRoutes;
+List<RouteBase> get $gameRoutes => $appRoutes;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:lm_labs_utils/widgets.dart';
 import 'package:sudoku/src/features/home/presentation/home.i18n.dart';
 import 'package:sudoku/src/routing/routes.dart';
-import 'package:lm_labs_utils/widgets.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({super.key});
@@ -31,30 +31,10 @@ class HomeView extends ConsumerWidget {
           children: [
             GridTile(
               child: LLTappable.expand(
-                onTap: () async =>
-                    ref.router.push(const CounterRoute().location),
+                onTap: () async => ref.router.push(const GameRoute().location),
                 child: Card(
                   margin: EdgeInsets.zero,
-                  child: Center(child: Text('Counter'.i18n)),
-                ),
-              ),
-            ),
-            GridTile(
-              child: LLTappable.expand(
-                onTap: () async => ref.router.push(const JokesRoute().location),
-                child: Card(
-                  margin: EdgeInsets.zero,
-                  child: Center(child: Text('Jokes'.i18n)),
-                ),
-              ),
-            ),
-            GridTile(
-              child: LLTappable.expand(
-                onTap: () async =>
-                    ref.router.push(const SampleItemListRoute().location),
-                child: Card(
-                  margin: EdgeInsets.zero,
-                  child: Center(child: Text('Sample Items'.i18n)),
+                  child: Center(child: Text('Game'.i18n)),
                 ),
               ),
             ),

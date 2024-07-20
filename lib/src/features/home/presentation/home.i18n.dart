@@ -1,6 +1,5 @@
 import 'package:i18n_extension/i18n_extension.dart';
-import 'package:sudoku/src/features/counter/presentation/counter.i18n.dart';
-import 'package:sudoku/src/features/jokes/presentation/jokes.i18n.dart';
+import 'package:sudoku/src/features/game/presentation/game.i18n.dart';
 import 'package:sudoku/src/features/settings/presentation/settings.i18n.dart';
 import 'package:sudoku/src/localization/i18n.dart';
 // ignore_for_file: lines_longer_than_80_chars
@@ -28,7 +27,6 @@ extension HomeLocalization on String {
   static Translations get translations =>
       RunnerLocalization.translations *
       CounterLocalization.translations *
-      JokesLocalization.translations *
       SettingsLocalization.translations *
       _t;
 

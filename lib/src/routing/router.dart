@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:sudoku/src/routing/routes.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:sudoku/src/routing/routes.dart';
 
 part 'router.g.dart';
 
@@ -12,7 +12,7 @@ GoRouter router(RouterRef ref) {
 
   final router = GoRouter(
     navigatorKey: routerKey,
-    initialLocation: const HomeRoute().location,
+    initialLocation: const GameRoute().location,
     debugLogDiagnostics: true,
     routes: $appRoutes,
   );

@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:sudoku/src/features/shared_preferences/application/shared_preferences.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:sudoku/src/features/shared_preferences/application/shared_preferences.dart';
 
 part 'settings_service.g.dart';
 

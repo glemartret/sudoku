@@ -3,36 +3,8 @@ import 'package:sudoku/src/localization/i18n.dart';
 // ignore_for_file: lines_longer_than_80_chars
 
 // Search Strings without .i18n '(?!\.i18n)[\n\w\d\s.]*?'(?!\.i18n)(?!\n\.i18n)
-extension SampleFeatureLocalization on String {
+extension CounterLocalization on String {
   static final _t = Translations.byText('en') +
-      {
-        'en': 'Item Details %d',
-        'fr': "Détails de l'article %d",
-      } +
-      {
-        'en': 'More Information Here',
-        'fr': "Plus d'informations ici",
-      } +
-      {
-        'en': 'Sample Items',
-        'fr': "Articles d'échantillon",
-      } +
-      {
-        'en': 'Sample Item %d',
-        'fr': "Article d'échantillon %d",
-      } +
-      {
-        'en': '',
-        'fr': '',
-      } +
-      {
-        'en': '',
-        'fr': '',
-      } +
-      {
-        'en': '',
-        'fr': '',
-      } +
       {
         'en': '',
         'fr': '',
