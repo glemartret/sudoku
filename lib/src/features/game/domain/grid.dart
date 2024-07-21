@@ -1,5 +1,89 @@
 import 'package:sudoku/src/features/game/domain/cell.dart';
 
+const almostCompleteGrid = {
+  (0, 0): 3,
+  (0, 1): 9,
+  (0, 2): 1,
+  (0, 3): 2,
+  (0, 4): 8,
+  (0, 5): 6,
+  (0, 6): 5,
+  (0, 7): 7,
+  (0, 8): 4,
+  (1, 0): 4,
+  (1, 1): 8,
+  (1, 2): 7,
+  (1, 3): 3,
+  (1, 4): 5,
+  (1, 5): 9,
+  (1, 6): 1,
+  (1, 7): 2,
+  (1, 8): 6,
+  (2, 0): 6,
+  (2, 1): 5,
+  (2, 2): 2,
+  (2, 3): 7,
+  (2, 4): 1,
+  (2, 5): 4,
+  (2, 6): 8,
+  (2, 7): 3,
+  (2, 8): 9,
+  (3, 0): 8,
+  (3, 1): 7,
+  (3, 2): 5,
+  (3, 3): 4,
+  (3, 4): 3,
+  (3, 5): 1,
+  (3, 6): 6,
+  (3, 7): 9,
+  (3, 8): 2,
+  (4, 0): 2,
+  (4, 1): 1,
+  (4, 2): 3,
+  (4, 3): 9,
+  (4, 4): 6,
+  (4, 5): 7,
+  (4, 6): 4,
+  (4, 7): 8,
+  (4, 8): 5,
+  (5, 0): 9,
+  (5, 1): 6,
+  (5, 2): 4,
+  (5, 3): 5,
+  (5, 4): 2,
+  (5, 5): 8,
+  (5, 6): 7,
+  (5, 7): 1,
+  (5, 8): 3,
+  (6, 0): 1,
+  (6, 1): 4,
+  (6, 2): 9,
+  (6, 3): 6,
+  (6, 4): 7,
+  (6, 5): 3,
+  (6, 6): 2,
+  (6, 7): 5,
+  (6, 8): 8,
+  (7, 0): 5,
+  (7, 1): 3,
+  (7, 2): 8,
+  (7, 3): 1,
+  (7, 4): 4,
+  (7, 5): 2,
+  (7, 6): 9,
+  (7, 7): 6,
+  (7, 8): 7,
+  (8, 0): 7,
+  (8, 1): 2,
+  (8, 2): 6,
+  (8, 3): 8,
+  (8, 4): 9,
+  (8, 5): 5,
+  (8, 6): 3,
+  (8, 7): 4,
+  (8, 8): null, // 1
+};
+
 const emptyGrid = {
   (0, 0): null,
   (0, 1): null,
@@ -85,3 +169,54 @@ const emptyGrid = {
 };
 
 typedef Grid = Map<Cell, int?>;
+
+extension GridExt on Grid {
+  bool get isValid =>
+      _validCells && _validRows && _validColumns && _validSquares;
+
+  bool get _validCells => keys.every(
+        (cell) => this[cell] == null || this[cell]! > 0 && this[cell]! < 10,
+      );
+
+  bool get _validColumns => List.generate(9, (i) => i).every(_validColumn);
+
+  bool get _validRows => List.generate(9, (i) => i).every(_validRow);
+
+  bool get _validSquares => List.generate(9, (i) => i).every(_validSquare);
+
+  bool _validColumn(int column) {
+    final values = entries
+        .where((entry) => entry.key.$2 == column)
+        .map((entry) => entry.value!);
+
+    return 45 == values.fold(0, (sum, value) => sum + value) &&
+        values.toSet().length == values.length;
+  }
+
+  bool _validRow(int row) {
+    final values = entries
+        .where((entry) => entry.key.$1 == row)
+        .map((entry) => entry.value!);
+
+    return 45 == values.fold(0, (sum, value) => sum + value) &&
+        values.toSet().length == values.length;
+  }
+
+  bool _validSquare(int square) {
+    final row = square ~/ 3;
+    final column = square % 3;
+
+    final values = entries
+        .where(
+          (entry) =>
+              entry.key.$1 >= row * 3 &&
+              entry.key.$1 < (row + 1) * 3 &&
+              entry.key.$2 >= column * 3 &&
+              entry.key.$2 < (column + 1) * 3,
+        )
+        .map((entry) => entry.value!);
+
+    return 45 == values.fold(0, (sum, value) => sum + value) &&
+        values.toSet().length == values.length;
+  }
+}

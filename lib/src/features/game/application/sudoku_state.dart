@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:sudoku/src/features/game/application/sudoku_generator.dart';
 import 'package:sudoku/src/features/game/domain/cell.dart';
 import 'package:sudoku/src/features/game/domain/grid.dart';
 
@@ -9,18 +10,30 @@ part 'sudoku_state.g.dart';
 @riverpod
 class Sudoku extends _$Sudoku {
   @override
-  SudokuState build() =>
-      const SudokuState(baseGrid: emptyGrid, grid: emptyGrid);
+  SudokuState build() {
+    final generatedGrid = ref.read(sudokuGeneratorProvider());
 
-  void select(Cell? cell) {
-    state = state.copyWith(
-      selectedCell: state.selectedCell != cell ? cell : null,
+    return SudokuState(
+      baseGrid: generatedGrid,
+      grid: generatedGrid,
     );
   }
 
-  void setValue(int? value) {
+  void reset() {
+    ref.invalidateSelf();
+  }
+
+  bool select(Cell? cell) {
+    state = state.copyWith(
+      selectedCell: state.selectedCell != cell ? cell : null,
+    );
+
+    return true;
+  }
+
+  bool setValue(int? value) {
     if (state.selectedCell == null || state.isBase(state.selectedCell!)) {
-      return;
+      return false;
     }
 
     state = state.copyWith(
@@ -30,6 +43,8 @@ class Sudoku extends _$Sudoku {
           (oldValue) => oldValue != value ? value : null,
         ),
     );
+
+    return true;
   }
 }
 

@@ -6,7 +6,7 @@ part of 'sudoku_state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sudokuHash() => r'619202ad03f12da2bd07dc3a96f11c90ec6d2b1e';
+String _$sudokuHash() => r'd5520612297d49e229da919a43d07607eaf88546';
 
 /// See also [Sudoku].
 @ProviderFor(Sudoku)

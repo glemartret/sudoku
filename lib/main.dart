@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lm_labs_utils/widgets.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -33,5 +34,10 @@ Future<void> initApp(InitAppRef ref) async {
     // Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
     // // list of providers to be warmed up
     ref.watch(asyncSharedPreferencesProvider.future),
+    
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]),
   ].wait;
 }

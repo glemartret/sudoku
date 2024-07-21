@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lm_labs_utils/widgets.dart';
 import 'package:sudoku/src/features/game/application/sudoku_state.dart';
@@ -111,8 +112,12 @@ class SudokuGrid extends ConsumerWidget {
                       for (var j = 0; j < 9; j++)
                         Expanded(
                           child: LLTappable(
-                            onTap: () {
-                              ref.read(sudokuProvider.notifier).select((i, j));
+                            onTap: () async {
+                              if (ref
+                                  .read(sudokuProvider.notifier)
+                                  .select((i, j))) {
+                                await Haptics.vibrate(HapticsType.selection);
+                              }
                             },
                             child: SudokuCell(
                               cell: (i, j),
