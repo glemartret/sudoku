@@ -1,0 +1,31 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "sudoku-b5b69",
+          "appId": "1:1056582235524:android:0c065f363b1cf2c95fd9d1",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "sudoku-b5b69",
+          "appId": "1:1056582235524:ios:559d2141261efe325fd9d1",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "sudoku-b5b69",
+          "configurations": {
+            "android": "1:1056582235524:android:0c065f363b1cf2c95fd9d1",
+            "ios": "1:1056582235524:ios:559d2141261efe325fd9d1"
+          }
+        }
+      }
+    }
+  },
+  "remoteconfig": {}
+}
